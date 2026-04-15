@@ -1,0 +1,38 @@
+resource "aws_network_acl" "main" {
+  vpc_id = aws_vpc.this.id
+  tags = {
+    Project = "${local.project_name}"
+  }
+}
+
+resource "aws_network_acl_rule" "acl_rule_ingress" {
+  for_each = {
+    "100" = "tcp"
+    "110" = "udp"
+  }
+
+  network_acl_id = aws_network_acl.main.id
+  rule_number    = each.key
+  egress         = false
+  protocol       = each.value
+  cidr_block     = "0.0.0.0/0"
+  rule_action    = "allow"
+  from_port      = 0
+  to_port        = 65535
+}
+
+resource "aws_network_acl_rule" "acl_rule_egress" {
+  for_each = {
+    "100" = "tcp"
+    "110" = "udp"
+  }
+
+  network_acl_id = aws_network_acl.main.id
+  rule_number    = each.key
+  egress         = true
+  protocol       = each.value
+  cidr_block     = "0.0.0.0/0"
+  rule_action    = "allow"
+  from_port      = 0
+  to_port        = 65535
+}
