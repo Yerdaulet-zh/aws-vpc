@@ -1,9 +1,9 @@
 module "dev" {
   source           = "../../modules/vpc"
-  region           = "eu-central-1"
-  environment      = Production
-  project_name     = "EKS_academy"
-  eks_cluster_name = "${environment}_${project_name}"
+  region           = local.region
+  environment      = local.environment
+  project_name     = local.project_name
+  eks_cluster_name = local.eks_cluster_name
   nat_gateway_config = {
     "a"    = { enabled = false }
     "b"    = { enabled = false }
