@@ -4,11 +4,20 @@ locals {
 
   # Define where NAT Gateways should actually exist
   # If enabled = false, the NAT GW and EIP for that zone won't be created.
-  nat_zones = {
-    "a" = { public_subnet_id = aws_subnet.ipv4_public_a.id, enabled = true }
-    "b" = { public_subnet_id = aws_subnet.ipv4_public_b.id, enabled = true }
-    "c" = { public_subnet_id = aws_subnet.ipv4_public_c.id, enabled = true }
-  }
+  nat_zones = merge(
+    # IPv4 Public Subnets
+    {
+      "a" = { public_subnet_id = aws_subnet.ipv4_public_a.id, enabled = false }
+      "b" = { public_subnet_id = aws_subnet.ipv4_public_b.id, enabled = false }
+      "c" = { public_subnet_id = aws_subnet.ipv4_public_c.id, enabled = false }
+    },
+    # Dual-Stack Public Subnets
+    {
+      "a_ds" = { public_subnet_id = aws_subnet.dual_stack_public_a.id, enabled = true }
+      "b_ds" = { public_subnet_id = aws_subnet.dual_stack_public_b.id, enabled = true }
+      "c_ds" = { public_subnet_id = aws_subnet.dual_stack_public_c.id, enabled = true }
+    }
+  )
 
   # Map EVERY private subnet to a NAT Zone
   # This list includes IPv4-only, IPv6-native, and Dual-Stack subnets.
