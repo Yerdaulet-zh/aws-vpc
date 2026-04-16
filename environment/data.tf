@@ -11,13 +11,13 @@ data "aws_vpc_ipam_pool" "dev_ipv4" {
   }
 }
 
-data "aws_vpc_ipam_pool" "dev_ipv6" {
-  filter {
-    name   = "description"
-    values = ["dev ${data.aws_region.current.region} pool"]
-  }
-  filter {
-    name   = "address-family"
-    values = ["ipv6"]
-  }
-}
+# data "aws_vpc_ipam_pool" "dev_ipv6" {
+#   filter {
+#     name   = "description"
+#     values = ["dev ${data.aws_region.current.region} pool"]
+#   }
+#   filter {
+#     name   = "address-family"
+#     values = ["ipv6"]
+#   }
+# }
