@@ -10,6 +10,10 @@ variable "region" {
   type = string
 }
 
+variable "eks_cluster_name" {
+  type = string
+}
+
 variable "nat_gateway_config" {
   description = "Configuration for NAT Gateways across zones"
   type = map(object({
