@@ -10,6 +10,7 @@ resource "aws_subnet" "ipv6_public_a" {
 
   assign_ipv6_address_on_creation                = true
   enable_resource_name_dns_aaaa_record_on_launch = true
+  enable_dns64                                   = true
 
   tags = {
     Name                                            = "IPv6 Public Subnet 1"
@@ -27,6 +28,7 @@ resource "aws_subnet" "ipv6_public_b" {
 
   assign_ipv6_address_on_creation                = true
   enable_resource_name_dns_aaaa_record_on_launch = true
+  enable_dns64                                   = true
 
   tags = {
     Name                                            = "IPv6 Public Subnet 2"
@@ -44,6 +46,7 @@ resource "aws_subnet" "ipv6_public_c" {
 
   assign_ipv6_address_on_creation                = true
   enable_resource_name_dns_aaaa_record_on_launch = true
+  enable_dns64                                   = true
 
   tags = {
     Name                                            = "IPv6 Public Subnet 3"
@@ -61,6 +64,7 @@ resource "aws_subnet" "ipv6_private_a" {
 
   assign_ipv6_address_on_creation                = true
   enable_resource_name_dns_aaaa_record_on_launch = true
+  enable_dns64                                   = true
 
   tags = {
     Name                                            = "IPv6 Private Subnet 1"
@@ -78,6 +82,7 @@ resource "aws_subnet" "ipv6_private_b" {
 
   assign_ipv6_address_on_creation                = true
   enable_resource_name_dns_aaaa_record_on_launch = true
+  enable_dns64                                   = true
 
   tags = {
     Name                                            = "IPv6 Private Subnet 2"
@@ -95,6 +100,7 @@ resource "aws_subnet" "ipv6_private_c" {
 
   assign_ipv6_address_on_creation                = true
   enable_resource_name_dns_aaaa_record_on_launch = true
+  enable_dns64                                   = true
 
   tags = {
     Name                                            = "IPv6 Private Subnet 3"
