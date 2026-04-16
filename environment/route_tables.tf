@@ -1,3 +1,24 @@
+resource "aws_route_table" "dual_stack_public_route_table" {
+  vpc_id = aws_vpc.this.id
+
+  # IPv4 outbound
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.igw.id
+  }
+
+  # IPv6 outbound
+  route {
+    ipv6_cidr_block = "::/0"
+    gateway_id      = aws_internet_gateway.igw.id
+  }
+
+  tags = {
+    Name    = "Dual Stack Public Route Table"
+    Project = local.project_name
+  }
+}
+
 # Create consolidated Route Tables for zones with an active NAT GW
 resource "aws_route_table" "private_nat" {
   for_each = local.active_nats
