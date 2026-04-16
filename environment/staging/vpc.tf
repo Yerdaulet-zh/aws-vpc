@@ -1,4 +1,4 @@
-module "dev" {
+module "staging" {
   source           = "../../modules/vpc"
   region           = local.region
   environment      = local.environment
