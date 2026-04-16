@@ -10,6 +10,7 @@ resource "aws_subnet" "dual_stack_public_a" {
   map_public_ip_on_launch                        = true
   assign_ipv6_address_on_creation                = true
   enable_resource_name_dns_aaaa_record_on_launch = true
+  enable_dns64                                   = true
 
   tags = {
     Name                                            = "Dual Stack Public Subnet 1"
@@ -29,6 +30,7 @@ resource "aws_subnet" "dual_stack_public_b" {
   map_public_ip_on_launch                        = true
   assign_ipv6_address_on_creation                = true
   enable_resource_name_dns_aaaa_record_on_launch = true
+  enable_dns64                                   = true
 
   tags = {
     Name                                            = "Dual Stack Public Subnet 2"
@@ -48,6 +50,7 @@ resource "aws_subnet" "dual_stack_public_c" {
   map_public_ip_on_launch                        = true
   assign_ipv6_address_on_creation                = true
   enable_resource_name_dns_aaaa_record_on_launch = true
+  enable_dns64                                   = true
 
   tags = {
     Name                                            = "Dual Stack Public Subnet 3"
@@ -67,6 +70,7 @@ resource "aws_subnet" "dual_stack_private_a" {
   map_public_ip_on_launch                        = false
   assign_ipv6_address_on_creation                = true
   enable_resource_name_dns_aaaa_record_on_launch = true
+  enable_dns64                                   = true
 
   tags = {
     Name                                            = "Dual Stack Private Subnet 1"
@@ -86,6 +90,7 @@ resource "aws_subnet" "dual_stack_private_b" {
   map_public_ip_on_launch                        = false
   assign_ipv6_address_on_creation                = true
   enable_resource_name_dns_aaaa_record_on_launch = true
+  enable_dns64                                   = true
 
   tags = {
     Name                                            = "Dual Stack Private Subnet 2"
@@ -105,6 +110,7 @@ resource "aws_subnet" "dual_stack_private_c" {
   map_public_ip_on_launch                        = false
   assign_ipv6_address_on_creation                = true
   enable_resource_name_dns_aaaa_record_on_launch = true
+  enable_dns64                                   = true
 
   tags = {
     Name                                            = "Dual Stack Private Subnet 3"
