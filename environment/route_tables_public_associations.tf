@@ -1,24 +1,3 @@
-resource "aws_route_table" "dual_stack_public_route_table" {
-  vpc_id = aws_vpc.this.id
-
-  # IPv4 outbound
-  route {
-    cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.igw.id
-  }
-
-  # IPv6 outbound
-  route {
-    ipv6_cidr_block = "::/0"
-    gateway_id      = aws_internet_gateway.igw.id
-  }
-
-  tags = {
-    Name    = "Dual Stack Public Route Table"
-    Project = local.project_name
-  }
-}
-
 # Dual Stack
 resource "aws_route_table_association" "dual_stack_public_route_table_association_a" {
   subnet_id      = aws_subnet.dual_stack_public_a.id
