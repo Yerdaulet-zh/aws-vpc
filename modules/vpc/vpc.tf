@@ -14,7 +14,7 @@ resource "aws_vpc" "this" {
   enable_dns_hostnames                 = true
 
   tags = {
-    Name        = "${local.environment}_${local.project_name}"
+    Name        = "${local.project_name}-${local.environment}"
     Environment = "${local.environment}"
     Owner       = "Network-EKS"
     ManagedBy   = "terraform"
