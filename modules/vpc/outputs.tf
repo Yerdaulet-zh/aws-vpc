@@ -16,9 +16,9 @@ output "public_ipv4_subnets" {
 output "private_ipv4_subnets" {
   description = "Map of private subnet IDs"
   value = {
-    "public_ipv4_a" = aws_subnet.ipv4_private_a.id
-    "public_ipv4_b" = aws_subnet.ipv4_private_b.id
-    "public_ipv4_c" = aws_subnet.ipv4_private_c.id
+    "private_ipv4_a" = aws_subnet.ipv4_private_a.id
+    "private_ipv4_b" = aws_subnet.ipv4_private_b.id
+    "private_ipv4_c" = aws_subnet.ipv4_private_c.id
   }
 }
 
@@ -35,9 +35,9 @@ output "public_ipv6_subnets" {
 output "private_ipv6_subnets" {
   description = "Map of private subnet IDs"
   value = {
-    "public_ipv6_a" = aws_subnet.ipv6_private_a.id
-    "public_ipv6_b" = aws_subnet.ipv6_private_b.id
-    "public_ipv6_c" = aws_subnet.ipv6_private_c.id
+    "private_ipv6_a" = aws_subnet.ipv6_private_a.id
+    "private_ipv6_b" = aws_subnet.ipv6_private_b.id
+    "private_ipv6_c" = aws_subnet.ipv6_private_c.id
   }
 }
 
@@ -54,8 +54,8 @@ output "public_dual_stack_subnets" {
 output "private_dual_stack_subnets" {
   description = "Map of private subnet IDs"
   value = {
-    "public_dual_stack_a" = aws_subnet.dual_stack_private_a.id
-    "public_dual_stack_b" = aws_subnet.dual_stack_private_b.id
-    "public_dual_stack_c" = aws_subnet.dual_stack_private_c.id
+    "private_dual_stack_a" = aws_subnet.dual_stack_private_a.id
+    "private_dual_stack_b" = aws_subnet.dual_stack_private_b.id
+    "private_dual_stack_c" = aws_subnet.dual_stack_private_c.id
   }
 }
