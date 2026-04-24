@@ -15,7 +15,7 @@ resource "aws_subnet" "ipv6_public_a" {
   tags = {
     Name                                            = "IPv6 Public Subnet 1"
     Project                                         = local.project_name
-    "kubernetes.io/role/elb"                        = "1"
+    "kubernetes.io/role/elb"                        = "0"
     "kubernetes.io/cluster/${var.eks_cluster_name}" = "shared"
   }
 }
@@ -33,7 +33,7 @@ resource "aws_subnet" "ipv6_public_b" {
   tags = {
     Name                                            = "IPv6 Public Subnet 2"
     Project                                         = local.project_name
-    "kubernetes.io/role/elb"                        = "1"
+    "kubernetes.io/role/elb"                        = "0"
     "kubernetes.io/cluster/${var.eks_cluster_name}" = "shared"
   }
 }
@@ -51,7 +51,7 @@ resource "aws_subnet" "ipv6_public_c" {
   tags = {
     Name                                            = "IPv6 Public Subnet 3"
     Project                                         = local.project_name
-    "kubernetes.io/role/elb"                        = "1"
+    "kubernetes.io/role/elb"                        = "0"
     "kubernetes.io/cluster/${var.eks_cluster_name}" = "shared"
   }
 }
