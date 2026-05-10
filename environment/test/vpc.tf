@@ -10,7 +10,7 @@ module "dev" {
   vpc_config = {
     ipam_ipv4_id                         = null,
     ipv4_netmask_length                  = null,
-    cidr_block                           = "10.1.0.0/16",
+    cidr_block                           = "10.3.0.0/16",
     assign_generated_ipv6_cidr_block     = true
     instance_tenancy                     = "default"
     enable_dns_support                   = true
@@ -122,7 +122,7 @@ module "dev" {
       enable_resource_name_dns_aaaa_record_on_launch = false
       enable_dns64                                   = false
       tags = {
-        Name       = "IPv4 Public Subnet A"
+        Name       = "IPv4 Private Subnet A"
         k8s_elb    = "1"
         k8s_subnet = "shared"
       }
@@ -143,7 +143,7 @@ module "dev" {
       enable_resource_name_dns_aaaa_record_on_launch = false
       enable_dns64                                   = false
       tags = {
-        Name       = "IPv4 Public Subnet B"
+        Name       = "IPv4 Private Subnet B"
         k8s_elb    = "1"
         k8s_subnet = "shared"
       }
@@ -164,7 +164,7 @@ module "dev" {
       enable_resource_name_dns_aaaa_record_on_launch = false
       enable_dns64                                   = false
       tags = {
-        Name       = "IPv4 Public Subnet C"
+        Name       = "IPv4 Private Subnet C"
         k8s_elb    = "1"
         k8s_subnet = "shared"
       }
@@ -250,7 +250,7 @@ module "dev" {
       enable_resource_name_dns_aaaa_record_on_launch = true
       enable_dns64                                   = true
       tags = {
-        Name       = "IPv6 Public Subnet A"
+        Name       = "IPv6 Private Subnet A"
         k8s_elb    = "1"
         k8s_subnet = "shared"
       }
@@ -271,7 +271,7 @@ module "dev" {
       enable_resource_name_dns_aaaa_record_on_launch = true
       enable_dns64                                   = true
       tags = {
-        Name       = "IPv6 Public Subnet B"
+        Name       = "IPv6 Private Subnet B"
         k8s_elb    = "1"
         k8s_subnet = "shared"
       }
@@ -292,7 +292,7 @@ module "dev" {
       enable_resource_name_dns_aaaa_record_on_launch = true
       enable_dns64                                   = true
       tags = {
-        Name       = "IPv6 Public Subnet C"
+        Name       = "IPv6 Private Subnet C"
         k8s_elb    = "1"
         k8s_subnet = "shared"
       }
@@ -378,7 +378,7 @@ module "dev" {
       enable_resource_name_dns_aaaa_record_on_launch = true
       enable_dns64                                   = true
       tags = {
-        Name       = "Dual Stack Public Subnet A"
+        Name       = "Dual Stack Private Subnet A"
         k8s_elb    = "1"
         k8s_subnet = "shared"
       }
@@ -399,7 +399,7 @@ module "dev" {
       enable_resource_name_dns_aaaa_record_on_launch = true
       enable_dns64                                   = true
       tags = {
-        Name       = "IPv6 Public Subnet B"
+        Name       = "Dual Stack Private Subnet B"
         k8s_elb    = "1"
         k8s_subnet = "shared"
       }
@@ -420,7 +420,7 @@ module "dev" {
       enable_resource_name_dns_aaaa_record_on_launch = true
       enable_dns64                                   = true
       tags = {
-        Name       = "IPv6 Public Subnet C"
+        Name       = "Dual Stack Private Subnet C"
         k8s_elb    = "1"
         k8s_subnet = "shared"
       }
