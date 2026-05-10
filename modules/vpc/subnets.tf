@@ -3,7 +3,7 @@ resource "aws_subnet" "subnets" {
 
   vpc_id            = aws_vpc.this.id
   availability_zone = "${var.global.region}${each.value.availability_zone}"
-
+  ipv6_native       = each.value.ipv6_native
   cidr_block = each.value.cidrsubnet_ipv4.newbits != null ? cidrsubnet(
     aws_vpc.this.cidr_block, each.value.cidrsubnet_ipv4.newbits, each.value.cidrsubnet_ipv4.netnum
   ) : null

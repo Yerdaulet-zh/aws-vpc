@@ -76,7 +76,7 @@ variable "subnets" {
   description = "All types of subnet configurations"
   type = map(object({
     availability_zone = string
-
+    ipv6_native       = bool
     cidrsubnet_ipv4 = object({
       newbits = number
       netnum  = number
@@ -108,6 +108,7 @@ variable "subnets" {
         newbits = 4,
         netnum  = 0
       }
+      ipv6_native                                    = false
       map_public_ip_on_launch                        = true
       assign_ipv6_address_on_creation                = true
       enable_resource_name_dns_aaaa_record_on_launch = true

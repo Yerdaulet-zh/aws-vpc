@@ -52,10 +52,11 @@ module "dev" {
         newbits = null
         netnum  = null
       }
+      ipv6_native                                    = false
       map_public_ip_on_launch                        = true
       assign_ipv6_address_on_creation                = false
-      enable_resource_name_dns_aaaa_record_on_launch = true
-      enable_dns64                                   = true
+      enable_resource_name_dns_aaaa_record_on_launch = false
+      enable_dns64                                   = false
       tags = {
         Name       = "IPv4 Public Subnet A"
         k8s_elb    = "1"
@@ -72,10 +73,11 @@ module "dev" {
         newbits = null
         netnum  = null
       }
+      ipv6_native                                    = false
       map_public_ip_on_launch                        = true
       assign_ipv6_address_on_creation                = false
-      enable_resource_name_dns_aaaa_record_on_launch = true
-      enable_dns64                                   = true
+      enable_resource_name_dns_aaaa_record_on_launch = false
+      enable_dns64                                   = false
       tags = {
         Name       = "IPv4 Public Subnet B"
         k8s_elb    = "1"
@@ -92,10 +94,11 @@ module "dev" {
         newbits = null
         netnum  = null
       }
+      ipv6_native                                    = false
       map_public_ip_on_launch                        = true
       assign_ipv6_address_on_creation                = false
-      enable_resource_name_dns_aaaa_record_on_launch = true
-      enable_dns64                                   = true
+      enable_resource_name_dns_aaaa_record_on_launch = false
+      enable_dns64                                   = false
       tags = {
         Name       = "IPv4 Public Subnet C"
         k8s_elb    = "1"
@@ -113,10 +116,11 @@ module "dev" {
         newbits = null
         netnum  = null
       }
+      ipv6_native                                    = false
       map_public_ip_on_launch                        = false
       assign_ipv6_address_on_creation                = false
-      enable_resource_name_dns_aaaa_record_on_launch = true
-      enable_dns64                                   = true
+      enable_resource_name_dns_aaaa_record_on_launch = false
+      enable_dns64                                   = false
       tags = {
         Name       = "IPv4 Public Subnet A"
         k8s_elb    = "1"
@@ -133,10 +137,11 @@ module "dev" {
         newbits = null
         netnum  = null
       }
+      ipv6_native                                    = false
       map_public_ip_on_launch                        = false
       assign_ipv6_address_on_creation                = false
-      enable_resource_name_dns_aaaa_record_on_launch = true
-      enable_dns64                                   = true
+      enable_resource_name_dns_aaaa_record_on_launch = false
+      enable_dns64                                   = false
       tags = {
         Name       = "IPv4 Public Subnet B"
         k8s_elb    = "1"
@@ -153,10 +158,11 @@ module "dev" {
         newbits = null
         netnum  = null
       }
+      ipv6_native                                    = false
       map_public_ip_on_launch                        = false
       assign_ipv6_address_on_creation                = false
-      enable_resource_name_dns_aaaa_record_on_launch = true
-      enable_dns64                                   = true
+      enable_resource_name_dns_aaaa_record_on_launch = false
+      enable_dns64                                   = false
       tags = {
         Name       = "IPv4 Public Subnet C"
         k8s_elb    = "1"
@@ -174,7 +180,8 @@ module "dev" {
         newbits = 4,
         netnum  = 0
       }
-      map_public_ip_on_launch                        = true
+      ipv6_native                                    = true
+      map_public_ip_on_launch                        = false
       assign_ipv6_address_on_creation                = true
       enable_resource_name_dns_aaaa_record_on_launch = true
       enable_dns64                                   = true
@@ -194,7 +201,8 @@ module "dev" {
         newbits = 4,
         netnum  = 1
       }
-      map_public_ip_on_launch                        = true
+      ipv6_native                                    = true
+      map_public_ip_on_launch                        = false
       assign_ipv6_address_on_creation                = true
       enable_resource_name_dns_aaaa_record_on_launch = true
       enable_dns64                                   = true
@@ -214,7 +222,8 @@ module "dev" {
         newbits = 4,
         netnum  = 2
       }
-      map_public_ip_on_launch                        = true
+      ipv6_native                                    = true
+      map_public_ip_on_launch                        = false
       assign_ipv6_address_on_creation                = true
       enable_resource_name_dns_aaaa_record_on_launch = true
       enable_dns64                                   = true
@@ -235,6 +244,7 @@ module "dev" {
         newbits = 4,
         netnum  = 3
       }
+      ipv6_native                                    = true
       map_public_ip_on_launch                        = false
       assign_ipv6_address_on_creation                = true
       enable_resource_name_dns_aaaa_record_on_launch = true
@@ -255,6 +265,7 @@ module "dev" {
         newbits = 4,
         netnum  = 4
       }
+      ipv6_native                                    = true
       map_public_ip_on_launch                        = false
       assign_ipv6_address_on_creation                = true
       enable_resource_name_dns_aaaa_record_on_launch = true
@@ -275,6 +286,7 @@ module "dev" {
         newbits = 4,
         netnum  = 5
       }
+      ipv6_native                                    = true
       map_public_ip_on_launch                        = false
       assign_ipv6_address_on_creation                = true
       enable_resource_name_dns_aaaa_record_on_launch = true
@@ -296,6 +308,7 @@ module "dev" {
         newbits = 4,
         netnum  = 6
       }
+      ipv6_native                                    = false
       map_public_ip_on_launch                        = true
       assign_ipv6_address_on_creation                = true
       enable_resource_name_dns_aaaa_record_on_launch = true
@@ -316,6 +329,7 @@ module "dev" {
         newbits = 4,
         netnum  = 7
       }
+      ipv6_native                                    = false
       map_public_ip_on_launch                        = true
       assign_ipv6_address_on_creation                = true
       enable_resource_name_dns_aaaa_record_on_launch = true
@@ -336,6 +350,7 @@ module "dev" {
         newbits = 4,
         netnum  = 8
       }
+      ipv6_native                                    = false
       map_public_ip_on_launch                        = true
       assign_ipv6_address_on_creation                = true
       enable_resource_name_dns_aaaa_record_on_launch = true
@@ -357,6 +372,7 @@ module "dev" {
         newbits = 4,
         netnum  = 9
       }
+      ipv6_native                                    = false
       map_public_ip_on_launch                        = false
       assign_ipv6_address_on_creation                = true
       enable_resource_name_dns_aaaa_record_on_launch = true
@@ -377,6 +393,7 @@ module "dev" {
         newbits = 4,
         netnum  = 10
       }
+      ipv6_native                                    = false
       map_public_ip_on_launch                        = false
       assign_ipv6_address_on_creation                = true
       enable_resource_name_dns_aaaa_record_on_launch = true
@@ -397,6 +414,7 @@ module "dev" {
         newbits = 4,
         netnum  = 11
       }
+      ipv6_native                                    = false
       map_public_ip_on_launch                        = false
       assign_ipv6_address_on_creation                = true
       enable_resource_name_dns_aaaa_record_on_launch = true
