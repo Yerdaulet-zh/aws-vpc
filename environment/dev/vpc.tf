@@ -48,6 +48,10 @@ module "dev" {
         newbits = 4,
         netnum  = 0
       }
+      cidrsubnet_ipv6 = {
+        newbits = null
+        netnum  = null
+      }
       map_public_ip_on_launch                        = true
       assign_ipv6_address_on_creation                = false
       enable_resource_name_dns_aaaa_record_on_launch = true
@@ -64,6 +68,10 @@ module "dev" {
         newbits = 4,
         netnum  = 1
       }
+      cidrsubnet_ipv6 = {
+        newbits = null
+        netnum  = null
+      }
       map_public_ip_on_launch                        = true
       assign_ipv6_address_on_creation                = false
       enable_resource_name_dns_aaaa_record_on_launch = true
@@ -79,6 +87,10 @@ module "dev" {
       cidrsubnet_ipv4 = {
         newbits = 4,
         netnum  = 2
+      }
+      cidrsubnet_ipv6 = {
+        newbits = null
+        netnum  = null
       }
       map_public_ip_on_launch                        = true
       assign_ipv6_address_on_creation                = false
@@ -97,6 +109,10 @@ module "dev" {
         newbits = 4,
         netnum  = 3
       }
+      cidrsubnet_ipv6 = {
+        newbits = null
+        netnum  = null
+      }
       map_public_ip_on_launch                        = false
       assign_ipv6_address_on_creation                = false
       enable_resource_name_dns_aaaa_record_on_launch = true
@@ -112,6 +128,10 @@ module "dev" {
       cidrsubnet_ipv4 = {
         newbits = 4,
         netnum  = 4
+      }
+      cidrsubnet_ipv6 = {
+        newbits = null
+        netnum  = null
       }
       map_public_ip_on_launch                        = false
       assign_ipv6_address_on_creation                = false
@@ -129,6 +149,10 @@ module "dev" {
         newbits = 4,
         netnum  = 5
       }
+      cidrsubnet_ipv6 = {
+        newbits = null
+        netnum  = null
+      }
       map_public_ip_on_launch                        = false
       assign_ipv6_address_on_creation                = false
       enable_resource_name_dns_aaaa_record_on_launch = true
@@ -142,6 +166,10 @@ module "dev" {
     # -------- Public IPv6 Subnets --------
     "ipv6_public_a" = {
       availability_zone = "a"
+      cidrsubnet_ipv4 = {
+        newbits = null
+        netnum  = null
+      }
       cidrsubnet_ipv6 = {
         newbits = 4,
         netnum  = 0
@@ -158,6 +186,10 @@ module "dev" {
     },
     "ipv6_public_b" = {
       availability_zone = "b"
+      cidrsubnet_ipv4 = {
+        newbits = null
+        netnum  = null
+      }
       cidrsubnet_ipv6 = {
         newbits = 4,
         netnum  = 1
@@ -174,6 +206,10 @@ module "dev" {
     },
     "ipv6_public_c" = {
       availability_zone = "c"
+      cidrsubnet_ipv4 = {
+        newbits = null
+        netnum  = null
+      }
       cidrsubnet_ipv6 = {
         newbits = 4,
         netnum  = 2
@@ -191,6 +227,10 @@ module "dev" {
     # -------- Private IPv6 Subnets --------
     "ipv6_private_a" = {
       availability_zone = "a"
+      cidrsubnet_ipv4 = {
+        newbits = null
+        netnum  = null
+      }
       cidrsubnet_ipv6 = {
         newbits = 4,
         netnum  = 3
@@ -207,6 +247,10 @@ module "dev" {
     },
     "ipv6_private_b" = {
       availability_zone = "b"
+      cidrsubnet_ipv4 = {
+        newbits = null
+        netnum  = null
+      }
       cidrsubnet_ipv6 = {
         newbits = 4,
         netnum  = 4
@@ -223,6 +267,10 @@ module "dev" {
     },
     "ipv6_private_c" = {
       availability_zone = "c"
+      cidrsubnet_ipv4 = {
+        newbits = null
+        netnum  = null
+      }
       cidrsubnet_ipv6 = {
         newbits = 4,
         netnum  = 5

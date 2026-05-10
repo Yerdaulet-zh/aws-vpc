@@ -1,8 +1,8 @@
 resource "aws_vpc" "this" {
-
-  ipv4_ipam_pool_id   = local.vpc_config.ipam_ipv4_id
-  ipv4_netmask_length = local.vpc_config.ipv4_netmask_length
-  cidr_block          = local.vpc_config.cidr_block
+  # If the key isn't in the map, return null
+  ipv4_ipam_pool_id   = lookup(local.vpc_config, "ipv4_ipam_pool_id", null)
+  ipv4_netmask_length = lookup(local.vpc_config, "ipv4_netmask_length", null)
+  cidr_block          = lookup(local.vpc_config, "cidr_block", null)
 
   # ipv6_ipam_pool_id   = aws_vpc_ipv6_cidr_block_association.example
   # ipv6_netmask_length = 56

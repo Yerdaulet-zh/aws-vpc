@@ -18,9 +18,9 @@ resource "aws_subnet" "subnets" {
   enable_dns64                                   = each.value.enable_dns64
 
   tags = {
-    Name                                            = each.value.tags.Name
-    Project                                         = var.global.project_name
-    "kubernetes.io/role/elb"                        = each.value.tags.k8s_elb
-    "kubernetes.io/cluster/${var.eks_cluster_name}" = each.value.tags.k8s_subnet
+    Name                                                   = each.value.tags.Name
+    Project                                                = var.global.project_name
+    "kubernetes.io/role/elb"                               = each.value.tags.k8s_elb
+    "kubernetes.io/cluster/${var.global.eks_cluster_name}" = each.value.tags.k8s_subnet
   }
 }

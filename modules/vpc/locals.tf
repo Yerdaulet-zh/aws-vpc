@@ -12,12 +12,12 @@ locals {
 
   # Map the keys to their corresponding subnet IDs
   subnet_id_lookup = {
-    "a"    = aws_subnet.ipv4_public_a.id
-    "b"    = aws_subnet.ipv4_public_b.id
-    "c"    = aws_subnet.ipv4_public_c.id
-    "a_ds" = aws_subnet.dual_stack_public_a.id
-    "b_ds" = aws_subnet.dual_stack_public_b.id
-    "c_ds" = aws_subnet.dual_stack_public_c.id
+    "a"    = aws_subnet.subnets["ipv4_public_a"].id
+    "b"    = aws_subnet.subnets["ipv4_public_b"].id
+    "c"    = aws_subnet.subnets["ipv4_public_c"].id
+    "a_ds" = aws_subnet.subnets["dual_stack_public_a"].id
+    "b_ds" = aws_subnet.subnets["dual_stack_public_b"].id
+    "c_ds" = aws_subnet.subnets["dual_stack_public_c"].id
   }
   # Merge the variable settings with the actual IDs
   nat_zones = {
@@ -33,15 +33,15 @@ locals {
 
   # The actual resource ID references
   private_subnet_ids = {
-    "ipv4_pvt_a" = aws_subnet.ipv4_private_a.id
-    "ipv4_pvt_b" = aws_subnet.ipv4_private_b.id
-    "ipv4_pvt_c" = aws_subnet.ipv4_private_c.id
-    "ipv6_pvt_a" = aws_subnet.ipv6_private_a.id
-    "ipv6_pvt_b" = aws_subnet.ipv6_private_b.id
-    "ipv6_pvt_c" = aws_subnet.ipv6_private_c.id
-    "dual_pvt_a" = aws_subnet.dual_stack_private_a.id
-    "dual_pvt_b" = aws_subnet.dual_stack_private_b.id
-    "dual_pvt_c" = aws_subnet.dual_stack_private_c.id
+    "ipv4_pvt_a" = aws_subnet.subnets["ipv4_private_a"].id
+    "ipv4_pvt_b" = aws_subnet.subnets["ipv4_private_b"].id
+    "ipv4_pvt_c" = aws_subnet.subnets["ipv4_private_c"].id
+    "ipv6_pvt_a" = aws_subnet.subnets["ipv6_private_a"].id
+    "ipv6_pvt_b" = aws_subnet.subnets["ipv6_private_b"].id
+    "ipv6_pvt_c" = aws_subnet.subnets["ipv6_private_c"].id
+    "dual_pvt_a" = aws_subnet.subnets["dual_stack_private_a"].id
+    "dual_pvt_b" = aws_subnet.subnets["dual_stack_private_b"].id
+    "dual_pvt_c" = aws_subnet.subnets["dual_stack_private_c"].id
   }
 
   # The final map used by your route table resources
