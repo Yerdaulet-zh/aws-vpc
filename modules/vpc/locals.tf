@@ -1,7 +1,11 @@
 locals {
-  environment  = var.environment
-  project_name = var.project_name
-  region       = var.region
+  # This conditional block for vpc cidr block definition
+  vpc_config = var.vpc_config.ipam_ipv4_id != null ? {
+    ipv4_ipam_pool_id   = var.vpc_config.ipam_ipv4_id
+    ipv4_netmask_length = var.vpc_config.ipv4_netmask_length
+    } : {
+    cidr_block = var.vpc_config.cidr_block
+  }
 
   # Define where NAT Gateways should actually exist
   # If enabled = false, the NAT GW and EIP for that zone won't be created.

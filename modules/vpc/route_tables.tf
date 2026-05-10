@@ -15,7 +15,7 @@ resource "aws_route_table" "dual_stack_public_route_table" {
 
   tags = {
     Name    = "Dual Stack Public Route Table"
-    Project = local.project_name
+    Project = var.global.project_name
   }
 }
 
@@ -42,7 +42,7 @@ resource "aws_route_table" "private_nat" {
     egress_only_gateway_id = aws_egress_only_internet_gateway.this.id
   }
 
-  tags = { Name = "${local.project_name}-rt-combined-${each.key}" }
+  tags = { Name = "${var.global.project_name}-rt-combined-${each.key}" }
 }
 
 resource "aws_route_table" "ipv6_fallback" {
@@ -54,5 +54,5 @@ resource "aws_route_table" "ipv6_fallback" {
     egress_only_gateway_id = aws_egress_only_internet_gateway.this.id
   }
 
-  tags = { Name = "${local.project_name}-rt-fallback-ipv6" }
+  tags = { Name = "${var.global.project_name}-rt-fallback-ipv6" }
 }

@@ -1,47 +1,12 @@
-# Dual Stack
-resource "aws_route_table_association" "dual_stack_public_route_table_association_a" {
-  subnet_id      = aws_subnet.dual_stack_public_a.id
-  route_table_id = aws_route_table.dual_stack_public_route_table.id
-}
+resource "aws_route_table_association" "public" {
+  # Filter the subnets map to only include subnets where public IP is enabled
+  for_each = {
+    for k, v in var.subnets : k => v
+    if v.map_public_ip_on_launch == true
+  }
 
-resource "aws_route_table_association" "dual_stack_public_route_table_association_b" {
-  subnet_id      = aws_subnet.dual_stack_public_b.id
-  route_table_id = aws_route_table.dual_stack_public_route_table.id
-}
+  # Reference the dynamically created subnet ID
+  subnet_id = aws_subnet.subnets[each.key].id
 
-resource "aws_route_table_association" "dual_stack_public_route_table_association_c" {
-  subnet_id      = aws_subnet.dual_stack_public_c.id
-  route_table_id = aws_route_table.dual_stack_public_route_table.id
-}
-
-# IPv4
-resource "aws_route_table_association" "ipv4_only_public_route_table_association_a" {
-  subnet_id      = aws_subnet.ipv4_public_a.id
-  route_table_id = aws_route_table.dual_stack_public_route_table.id
-}
-
-resource "aws_route_table_association" "ipv4_only_public_route_table_association_b" {
-  subnet_id      = aws_subnet.ipv4_public_b.id
-  route_table_id = aws_route_table.dual_stack_public_route_table.id
-}
-
-resource "aws_route_table_association" "ipv4_only_public_route_table_association_c" {
-  subnet_id      = aws_subnet.ipv4_public_c.id
-  route_table_id = aws_route_table.dual_stack_public_route_table.id
-}
-
-# IPv6
-resource "aws_route_table_association" "ipv6_only_public_route_table_association_a" {
-  subnet_id      = aws_subnet.ipv6_public_a.id
-  route_table_id = aws_route_table.dual_stack_public_route_table.id
-}
-
-resource "aws_route_table_association" "ipv6_only_public_route_table_association_b" {
-  subnet_id      = aws_subnet.ipv6_public_b.id
-  route_table_id = aws_route_table.dual_stack_public_route_table.id
-}
-
-resource "aws_route_table_association" "ipv6_only_public_route_table_association_c" {
-  subnet_id      = aws_subnet.ipv6_public_c.id
   route_table_id = aws_route_table.dual_stack_public_route_table.id
 }
